@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>منصة كفيل للأيتام و الأرامل</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <div class="header-inner">
+    <div class="logo-area">
+      <div class="logo-icon">🤲</div>
+      <div class="logo-text">
+        <h1>منصة كفيل</h1>
+        <p>للأيتام و الأرامل</p>
+      </div>
+    </div>
+    <a href="index.html" class="nav-home">
+      ← الصفحة الرئيسية
+    </a>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <h2>حالات تحتاج إلى كفالة عاجلة</h2>
+  <p>
+    الهدف: كفالة <strong>165$</strong> لكل حالة. نحدّث الحالة فور ربطها بكافل.<br>
+    نحدّث البيانات باستمرار لعرض الحالات التي ما زالت بحاجة إلى كفيل.
+  </p>
+  <a href="https://wa.me/212700739802" class="whatsapp-btn" target="_blank">
+    📱 تواصل عبر واتساب
+  </a>
+</div>
+
+<!-- ══ STATS ══ -->
+<div class="stats-bar">
+  <div class="stat-card total">
+    <div class="stat-icon">📋</div>
+    <div class="stat-number" id="count-total">0</div>
+    <div class="stat-label">إجمالي الحالات</div>
+  </div>
+  <div class="stat-card waiting">
+    <div class="stat-icon">⏳</div>
+    <div class="stat-number" id="count-waiting">0</div>
+    <div class="stat-label">بانتظار الكفالة</div>
+  </div>
+  <div class="stat-card done">
+    <div class="stat-icon">✅</div>
+    <div class="stat-number" id="count-done">0</div>
+    <div class="stat-label">حالات مكفولة</div>
+  </div>
+</div>
+
+<!-- ══ MAIN ══ -->
+<div class="main">
+  <div class="section-title">قائمة الحالات</div>
+
+  <!-- Filter -->
+  <div class="filter-bar">
+    <span class="filter-label">الفلترة:</span>
+    <button class="filter-btn active" data-filter="all">الكل</button>
+    <button class="filter-btn" data-filter="waiting">بانتظار الكفالة</button>
+    <button class="filter-btn" data-filter="done">مكفولة</button>
+  </div>
+
+  <!-- Cards -->
+  <div class="cards-grid" id="cards-grid">
+    <!-- Filled by JS -->
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <button class="page-btn" id="btn-prev" onclick="changePage(-1)" disabled>→ السابق</button>
+    <span class="page-info" id="page-info">الصفحة 1</span>
+    <button class="page-btn" id="btn-next" onclick="changePage(1)" disabled>التالي ←</button>
+  </div>
+</div>
+
+<!-- ══ MODAL ══ -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modal-title">تفاصيل الحالة</h3>
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
