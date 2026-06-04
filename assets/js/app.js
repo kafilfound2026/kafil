@@ -71,7 +71,7 @@ function renderCards() {
         <div class="card-amount">💰 الهدف: ${caseItem.amount}$</div>
       </div>
       <div class="card-footer">
-        <a href="https://wa.me/212700739802?text=أود الكفالة عن الحالة ${encodeURIComponent(caseItem.id + ' – ' + caseItem.name)}"
+        <a href="https://wa.me/212767173242?text=أود الكفالة عن الحالة ${encodeURIComponent(caseItem.id + ' – ' + caseItem.name)}"
            class="btn-contact" target="_blank">📱 تواصل للكفالة</a>
         <button class="btn-details" onclick='openModal(${JSON.stringify(caseItem)})'>التفاصيل</button>
       </div>
@@ -127,7 +127,7 @@ function openModal(caseItem) {
       </div>
     </div>
     ${caseItem.status === 'waiting' ? `
-    <a href="https://wa.me/212700739802?text=أود الكفالة عن الحالة ${encodeURIComponent(caseItem.id + ' – ' + caseItem.name)}"
+    <a href="https://wa.me/212767173242?text=أود الكفالة عن الحالة ${encodeURIComponent(caseItem.id + ' – ' + caseItem.name)}"
        class="btn-contact" target="_blank" style="margin-top:14px;display:inline-flex;">
       📱 تواصل للكفالة الآن
     </a>` : ''}
