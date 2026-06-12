@@ -58,11 +58,12 @@ function renderCards() {
   }
 
   grid.innerHTML = paged.map(caseItem => `
+    
     <div class="case-card">
       <div class="card-header">
         <span class="card-id">${caseItem.id}</span>
         <span class="card-status ${caseItem.status === 'waiting' ? 'waiting' : 'done'}">
-          ${caseItem.status === 'waiting' ? '⏳ بانتظار الكفالة' : '✅ مكفولة'}
+          ${caseItem.status === 'حالة مكفولة' ? '⏳ بانتظار الكفالة' : '✅ مكفولة'}
         </span>
       </div>
       <div class="card-body">
