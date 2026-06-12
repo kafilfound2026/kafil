@@ -1,6 +1,6 @@
 let currentFilter = "all";
 let currentPage = 1;
-const PAGE_SIZE = 4;
+const PAGE_SIZE = 10;
 
 document.addEventListener("DOMContentLoaded", () => {
   updateStats();
@@ -19,7 +19,7 @@ function updateStats() {
 function animateCount(id, target) {
   const element = document.getElementById(id);
   let current = 0;
-  const step = Math.max(1, Math.round(target / 30));
+  const step = Math.max(3, Math.round(target / 90));
   const timer = setInterval(() => {
     current = Math.min(current + step, target);
     element.textContent = current;
@@ -36,6 +36,7 @@ function filteredCases() {
 
 function renderCards() {
   const grid = document.getElementById("cards-grid");
+  const pagination = document.querySelector(".pagination");
   const cases = filteredCases();
   const total = cases.length;
   const pages = Math.ceil(total / PAGE_SIZE) || 1;
@@ -44,9 +45,15 @@ function renderCards() {
   const start = (currentPage - 1) * PAGE_SIZE;
   const paged = cases.slice(start, start + PAGE_SIZE);
 
-  document.getElementById("btn-prev").disabled = currentPage <= 1;
-  document.getElementById("btn-next").disabled = currentPage >= pages;
-  document.getElementById("page-info").textContent = `الصفحة ${currentPage} من ${pages}`;
+  // Hide pagination if only one page
+  if (pages <= 1) {
+    pagination.style.display = "none";
+  } else {
+    pagination.style.display = "flex";
+    document.getElementById("btn-prev").disabled = currentPage <= 1;
+    document.getElementById("btn-next").disabled = currentPage >= pages;
+    document.getElementById("page-info").textContent = `الصفحة ${currentPage} من ${pages}`;
+  }
 
   if (paged.length === 0) {
     grid.innerHTML = `
