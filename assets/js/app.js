@@ -119,7 +119,7 @@ function openModal(caseItem) {
     </div>
     <div class="detail-row">
       <div class="detail-icon">💰</div>
-      <div class="detail-text"><strong>مبلغ الكفالة المطلوب</strong><span>${caseItem.amount}$ شهرياً</span></div>
+      <div class="detail-text"><strong>مبلغ الكفالة المطلوب</strong><span>${caseItem.amount}$ لثلاثة أشهر</span></div>
     </div>
     <div class="detail-row">
       <div class="detail-icon">📝</div>
