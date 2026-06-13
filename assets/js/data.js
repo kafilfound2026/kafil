@@ -36,7 +36,7 @@ var CASES = [
 		amount: 495,
 		status: "waiting",
 		city: "-",
-		category: "يتيم",
+		category: "يتيمة",
 		details: "الوصي: صابرين محمد خالد الفرا"
 	},
 	{
