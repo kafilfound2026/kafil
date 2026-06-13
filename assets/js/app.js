@@ -71,10 +71,6 @@ function openModal(caseItem) {
       <div class="detail-text"><strong>المدينة</strong><span>${caseItem.city}</span></div>
     </div>
     <div class="detail-row">
-      <div class="detail-icon">🏷️</div>
-      <div class="detail-text"><strong>التصنيف</strong><span>${caseItem.category}</span></div>
-    </div>
-    <div class="detail-row">
       <div class="detail-icon">💰</div>
       <div class="detail-text"><strong>مبلغ الكفالة المطلوب</strong><span>${caseItem.amount}$ لثلاثة أشهر</span></div>
     </div>
