@@ -1,7 +1,26 @@
+let currentFilter = "all";
+
 document.addEventListener("DOMContentLoaded", () => {
   updateStats();
   renderCards();
+  bindFilters();
 });
+
+function bindFilters() {
+  document.querySelectorAll(".filter-btn").forEach(button => {
+    button.addEventListener("click", () => {
+      document.querySelectorAll(".filter-btn").forEach(item => item.classList.remove("active"));
+      button.classList.add("active");
+      currentFilter = button.dataset.filter;
+      renderCards();
+    });
+  });
+}
+
+function filteredCases(cases) {
+  if (currentFilter === "all") return cases;
+  return cases.filter(caseItem => caseItem.status === currentFilter);
+}
 
 function updateStats() {
   const waiting = CASES.filter(caseItem => caseItem.status === "waiting").length;
@@ -47,8 +66,8 @@ function renderCards() {
   const orphansGrid = document.getElementById("orphans-grid");
   const widowsGrid = document.getElementById("widows-grid");
 
-  const orphans = CASES.filter(caseItem => caseItem.category === "يتيمة");
-  const widows = CASES.filter(caseItem => caseItem.category === "أرملة");
+  const orphans = filteredCases(CASES.filter(caseItem => caseItem.category === "يتيم"));
+  const widows = filteredCases(CASES.filter(caseItem => caseItem.category === "أرملة"));
 
   orphansGrid.innerHTML = orphans.length > 0 
     ? orphans.map(renderCard).join("") 
@@ -69,10 +88,6 @@ function openModal(caseItem) {
     <div class="detail-row">
       <div class="detail-icon">📍</div>
       <div class="detail-text"><strong>المدينة</strong><span>${caseItem.city}</span></div>
-    </div>
-    <div class="detail-row">
-      <div class="detail-icon">🏷️</div>
-      <div class="detail-text"><strong>التصنيف</strong><span>${caseItem.category}</span></div>
     </div>
     <div class="detail-row">
       <div class="detail-icon">💰</div>
