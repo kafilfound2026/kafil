@@ -56,26 +56,16 @@
 
 <!-- ══ MAIN ══ -->
 <div class="main">
-  <div class="section-title">قائمة الحالات</div>
-
-  <!-- Filter -->
-  <div class="filter-bar">
-    <span class="filter-label">الفلترة:</span>
-    <button class="filter-btn active" data-filter="all">الكل</button>
-    <button class="filter-btn" data-filter="waiting">بانتظار الكفالة</button>
-    <button class="filter-btn" data-filter="done">مكفولة</button>
-  </div>
-
-  <!-- Cards -->
-  <div class="cards-grid" id="cards-grid">
+  <!-- Orphans Section -->
+  <div class="section-title">الأيتام</div>
+  <div class="cards-grid" id="orphans-grid">
     <!-- Filled by JS -->
   </div>
 
-  <!-- Pagination -->
-  <div class="pagination">
-    <button class="page-btn" id="btn-prev" onclick="changePage(-1)" disabled>→ السابق</button>
-    <span class="page-info" id="page-info">الصفحة 1</span>
-    <button class="page-btn" id="btn-next" onclick="changePage(1)" disabled>التالي ←</button>
+  <!-- Widows Section -->
+  <div class="section-title">الأرامل</div>
+  <div class="cards-grid" id="widows-grid">
+    <!-- Filled by JS -->
   </div>
 </div>
 

@@ -1,11 +1,6 @@
-let currentFilter = "all";
-let currentPage = 1;
-const PAGE_SIZE = 10;
-
 document.addEventListener("DOMContentLoaded", () => {
   updateStats();
   renderCards();
-  bindFilters();
 });
 
 function updateStats() {
@@ -19,7 +14,7 @@ function updateStats() {
 function animateCount(id, target) {
   const element = document.getElementById(id);
   let current = 0;
-  const step = Math.max(3, Math.round(target / 90));
+  const step = Math.max(1, Math.round(target / 30));
   const timer = setInterval(() => {
     current = Math.min(current + step, target);
     element.textContent = current;
@@ -27,44 +22,8 @@ function animateCount(id, target) {
   }, 40);
 }
 
-function filteredCases() {
-  if (currentFilter === "all") return CASES;
-  if (currentFilter === "waiting") return CASES.filter(caseItem => caseItem.status === "waiting");
-  if (currentFilter === "done") return CASES.filter(caseItem => caseItem.status === "done");
-  return CASES;
-}
-
-function renderCards() {
-  const grid = document.getElementById("cards-grid");
-  const pagination = document.querySelector(".pagination");
-  const cases = filteredCases();
-  const total = cases.length;
-  const pages = Math.ceil(total / PAGE_SIZE) || 1;
-  currentPage = Math.min(currentPage, pages);
-
-  const start = (currentPage - 1) * PAGE_SIZE;
-  const paged = cases.slice(start, start + PAGE_SIZE);
-
-  // Hide pagination if only one page
-  if (pages <= 1) {
-    pagination.style.display = "none";
-  } else {
-    pagination.style.display = "flex";
-    document.getElementById("btn-prev").disabled = currentPage <= 1;
-    document.getElementById("btn-next").disabled = currentPage >= pages;
-    document.getElementById("page-info").textContent = `الصفحة ${currentPage} من ${pages}`;
-  }
-
-  if (paged.length === 0) {
-    grid.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-icon">🔍</div>
-        <p>لا توجد حالات متاحة حاليًا. عد لاحقًا لرؤية التحديثات.</p>
-      </div>`;
-    return;
-  }
-
-  grid.innerHTML = paged.map(caseItem => `
+function renderCard(caseItem) {
+  return `
     <div class="case-card">
       <div class="card-header">
         <span class="card-id">${caseItem.id}</span>
@@ -81,25 +40,23 @@ function renderCards() {
         <button class="btn-details" onclick='openModal(${JSON.stringify(caseItem)})'>التفاصيل</button>
       </div>
     </div>
-  `).join("");
+  `;
 }
 
-function bindFilters() {
-  document.querySelectorAll(".filter-btn").forEach(button => {
-    button.addEventListener("click", () => {
-      document.querySelectorAll(".filter-btn").forEach(item => item.classList.remove("active"));
-      button.classList.add("active");
-      currentFilter = button.dataset.filter;
-      currentPage = 1;
-      renderCards();
-    });
-  });
-}
+function renderCards() {
+  const orphansGrid = document.getElementById("orphans-grid");
+  const widowsGrid = document.getElementById("widows-grid");
 
-function changePage(direction) {
-  currentPage += direction;
-  renderCards();
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  const orphans = CASES.filter(caseItem => caseItem.category === "يتيمة");
+  const widows = CASES.filter(caseItem => caseItem.category === "أرملة");
+
+  orphansGrid.innerHTML = orphans.length > 0 
+    ? orphans.map(renderCard).join("") 
+    : `<div class="empty-state"><div class="empty-icon">🔍</div><p>لا توجد حالات أيتام متاحة حاليًا.</p></div>`;
+
+  widowsGrid.innerHTML = widows.length > 0 
+    ? widows.map(renderCard).join("") 
+    : `<div class="empty-state"><div class="empty-icon">🔍</div><p>لا توجد حالات أرامل متاحة حاليًا.</p></div>`;
 }
 
 function openModal(caseItem) {
@@ -131,7 +88,6 @@ function openModal(caseItem) {
         <span>${caseItem.status === 'waiting' ? '⏳ بانتظار كفيل' : '✅ تمت الكفالة'}</span>
       </div>
     </div>
-
   `;
   document.getElementById("modal-overlay").classList.add("open");
 }
