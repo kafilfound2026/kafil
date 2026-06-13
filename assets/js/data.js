@@ -6,7 +6,7 @@ var CASES = [
 		amount: 495,
 		status: "waiting",
 		city: "-",
-		category: "يتيمة",
+		category: "يتيم",
 		details: "الوصي: وسام زياد رشيد الأسطل"
 	},
 	{
@@ -16,7 +16,7 @@ var CASES = [
 		amount: 495,
 		status: "waiting",
 		city: "-",
-		category: "يتيمة",
+		category: "يتيم",
 		details: "الوصي: هديل ربحي غالية"
 	},
 	{
@@ -26,7 +26,7 @@ var CASES = [
 		amount: 495,
 		status: "waiting",
 		city: "-",
-		category: "يتيمة",
+		category: "يتيم",
 		details: "الوصي: هداية صالح أبو نحل. ليس لديها كفالات دائمة وتسكن مع والدتها التي ليس لها مُعيل. السكن: خيمة"
 	},
 	{
@@ -36,7 +36,7 @@ var CASES = [
 		amount: 495,
 		status: "waiting",
 		city: "-",
-		category: "يتيمة",
+		category: "يتيم",
 		details: "الوصي: صابرين محمد خالد الفرا"
 	},
 	{
@@ -46,7 +46,7 @@ var CASES = [
 		amount: 495,
 		status: "waiting",
 		city: "-",
-		category: "يتيمة",
+		category: "يتيم",
 		details: ".الوصي:الام /ميساء زهير توفيق الشوبكي ,الحاله المادية لا يوجد مصدر دخل "
 	},
 
