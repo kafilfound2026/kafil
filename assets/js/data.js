@@ -6,7 +6,6 @@ var CASES = [
 		amount: 495,
 		status: "waiting",
 		city: "-",
-		category: "يتيمة",
 		details: "الوصي: وسام زياد رشيد الأسطل"
 	},
 	{
@@ -16,7 +15,6 @@ var CASES = [
 		amount: 495,
 		status: "waiting",
 		city: "-",
-		category: "يتيمة",
 		details: "الوصي: هديل ربحي غالية"
 	},
 	{
@@ -26,7 +24,6 @@ var CASES = [
 		amount: 495,
 		status: "waiting",
 		city: "-",
-		category: "يتيمة",
 		details: "الوصي: هداية صالح أبو نحل. ليس لديها كفالات دائمة وتسكن مع والدتها التي ليس لها مُعيل. السكن: خيمة"
 	},
 	{
@@ -36,7 +33,6 @@ var CASES = [
 		amount: 495,
 		status: "waiting",
 		city: "-",
-		category: "يتيم",
 		details: "الوصي: صابرين محمد خالد الفرا"
 	},
 	{
@@ -46,7 +42,6 @@ var CASES = [
 		amount: 495,
 		status: "waiting",
 		city: "-",
-		category: "يتيمة",
 		details: ".الوصي:الام /ميساء زهير توفيق الشوبكي ,الحاله المادية لا يوجد مصدر دخل "
 	},
 
@@ -57,7 +52,6 @@ var CASES = [
 		amount: 495,
 		status: "waiting",
 		city: "-",
-		category: "أرملة",
 		details: "الحالة المادية: متدنيه لا يوجد مصدر دخل"
 	},
 	{
@@ -67,7 +61,6 @@ var CASES = [
 		amount: 495,
 		status: "waiting",
 		city: "-",
-		category: "أرملة",
 		details: "الحالة المادية: لا نمتلك أي دخل. فقدنا المعيل الوحيد للأسرة ولا نمتلك أي دخل"
 	},
 	{
@@ -77,7 +70,6 @@ var CASES = [
 		amount: 495,
 		status: "waiting",
 		city: "-",
-		category: "أرملة",
 		details: "الحالة المادية: ضعيفة. لا يوجد دخل أساسي للأسرة"
 	},
 	{
@@ -87,7 +79,6 @@ var CASES = [
 		amount: 495,
 		status: "waiting",
 		city: "-",
-		category: "أرملة",
 		details: "الحالة المادية: صعبة للغاية"
 	},
 	{
@@ -97,7 +88,6 @@ var CASES = [
 		amount: 495,
 		status: "waiting",
 		city: "-",
-		category: "أرملة",
 		details: "الحالة المادية: سيئة. لا يوجد مصدر دخل والعائلة دون معيل"
 	},
 ];
