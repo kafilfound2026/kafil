@@ -4,7 +4,7 @@ var CASES = [
 		name: "فرح عبدالرحيم جمال عمار",
 		description: "يتيمة،عمر : 3 سنوات، تاريخ استشهاد الأب: 27/10/2023",
 		amount: 495,
-		status: "waiting",
+		status: "done",
 		city: "-",
 		category: "يتيم",
 		details: "الوصي: وسام زياد رشيد الأسطل"
