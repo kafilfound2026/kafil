@@ -55,7 +55,7 @@ var CASES = [
 		name: "نزهة بلال احمد راضي",
 		description: "أرملة، عدد الأفراد: 3، تاريخ وفاة الزوج: 13/3/2024",
 		amount: 495,
-		status: "waiting",
+		status: "done",
 		city: "-",
 		category: "أرملة",
 		details: "الحالة المادية: متدنيه لا يوجد مصدر دخل"
