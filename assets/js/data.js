@@ -34,7 +34,7 @@ var CASES = [
 		name: "علي الحسن بن علي ناجي الاغا",
 		description: "يتيمة،عمر : 11 سنة",
 		amount: 495,
-		status: "waiting",
+		status: "done",
 		city: "-",
 		category: "يتيم",
 		details: "الوصي: صابرين محمد خالد الفرا"
