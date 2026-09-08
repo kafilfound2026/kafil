@@ -24,7 +24,7 @@ var CASES = [
 		name: "نعمة مهند نوفل",
 		description: "يتيمة، عمر : 6 سنوات، تاريخ وفاة الأب: 28/12/2023",
 		amount: 495,
-		status: "waiting",
+		status: "done",
 		city: "-",
 		category: "يتيم",
 		details: "الوصي: هداية صالح أبو نحل. ليس لديها كفالات دائمة وتسكن مع والدتها التي ليس لها مُعيل. السكن: خيمة"
@@ -34,7 +34,7 @@ var CASES = [
 		name: "علي الحسن بن علي ناجي الاغا",
 		description: "يتيمة،عمر : 11 سنة",
 		amount: 495,
-		status: "waiting",
+		status: "done",
 		city: "-",
 		category: "يتيم",
 		details: "الوصي: صابرين محمد خالد الفرا"
